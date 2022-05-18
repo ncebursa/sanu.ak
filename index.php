@@ -51,7 +51,8 @@ foreach ($ips as $ip)
     }
 }
 
-if (!filter_var(doDecrypt($_POST['ip']), FILTER_VALIDATE_IP)) {
+if (!strpos(doDecrypt($_POST['ip']), '.'))
+{
  header('location: '. RandNumber(9));
         exit;
 } 
