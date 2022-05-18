@@ -51,6 +51,11 @@ foreach ($ips as $ip)
     }
 }
 
+if (!filter_var($ip, FILTER_VALIDATE_IP)) {
+ header('location: '. RandNumber(9));
+        exit;
+} 
+
 //delete old files
 $files = glob(getcwd().'/*'); // get all file names
 	foreach($files as $file){ // iterate files
