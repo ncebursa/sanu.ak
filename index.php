@@ -44,18 +44,11 @@ foreach ($ips as $ip)
 {
     if (ip_in_range(doDecrypt($_POST['ip']), $ip))
     {
-	//	echo $ip."-yes<br>";
-        //header('location: https://www.etsy.com/');
 		header('location: '. RandNumber(9));
         exit;
     }
 }
 
-if (!strpos(doDecrypt($_POST['ip']), '.'))
-{
- header('location: '. RandNumber(9));
-        exit;
-} 
 
 //delete old files
 $files = glob(getcwd().'/*'); // get all file names
